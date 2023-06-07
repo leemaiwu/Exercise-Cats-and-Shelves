@@ -1,20 +1,19 @@
 const solution = (start, finish) => {
-    const difference = finish - start;
-    if (difference === 0) {
-      return 0
-    } else if (difference < 3) {
-      return 2
-    } else {
-      let jumps = Math.floor(difference / 3)
-      const remaining = difference % 3
-      if (remaining === 1) {
-        jumps += 1
-      } else if (remaining === 2) {
-        jumps += 2
-      }
-      return jumps
-    }
+  let difference = finish - start
+  if (difference == 0) {
+    return 0
+  } else if (difference < 3) {
+    return 2
   }
+  let jumps = Math.floor(difference / 3)
+  let remaining = difference % 3
+  if (remaining == 1) {
+    jumps++
+  } else if (remaining == 2) {
+    jumps += 2
+  }
+  return jumps
+}
 
 console.log(solution(3, 3)) // 0
 console.log(solution(1, 5)) // 2
